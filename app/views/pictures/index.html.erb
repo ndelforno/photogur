@@ -1,5 +1,5 @@
-<h1>Pictures</h1>`
+<h1>Pictures</h1>
 
-<p><% @pictures.each do |picture| %>, <%= picture.artist %> </p>
-<img src="<%= picture.url %>" alt="<% picture.title %>">
+<p><% @pictures.each do |picture| %> <%= picture.artist %> </p>
+<img src="<%= picture.url %>" alt="<%= picture.title %>">
 <% end %>
