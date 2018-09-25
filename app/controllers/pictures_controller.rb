@@ -4,6 +4,14 @@ class PicturesController < ApplicationController
   end
 
   def show
-    @pictures = Picture.find(params[:id])
+    @picture = Picture.find(params[:id])
+  end
+
+  def new
+    @picture = Picture.new
+  end
+
+  def create
+    render text: "Received POST request to '/pictures' whith the data URL: #{params}"
   end
 end
