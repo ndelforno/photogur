@@ -1,6 +1,9 @@
 class PicturesController < ApplicationController
   def index
     @pictures = Picture.all
+    @most_recent_pictures = Picture.most_recent_five
+    @one_month_old_pic = Picture.created_before
+    @years = Picture.pluck(:created_at).map{|x| x.year}.uniq
   end
 
   def show
@@ -37,6 +40,7 @@ class PicturesController < ApplicationController
     @picture.title = params[:picture][:title]
     @picture.artist = params[:picture][:artist]
     @picture.url = params[:picture][:url]
+    @picture.created_at = params[:picture][:created_at]
 
     if @picture.save
       redirect_to "/pictures/#{@picture.id}"
@@ -50,5 +54,5 @@ class PicturesController < ApplicationController
     @picture.destroy
     redirect_to "/pictures"
   end
-  
+
 end

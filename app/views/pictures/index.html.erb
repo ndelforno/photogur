@@ -5,3 +5,25 @@
 <p><%= picture.title %>, <%= picture.artist %> </p>
 <%= link_to(image_tag(picture.url), "/pictures/#{picture.id}") %>
 <% end %>
+
+<h1>Most recent pictures</h1>
+<ul>
+  <% @most_recent_pictures.each do |picture| %>
+  <li><%= picture.title %> </li>
+  <% end %>
+</ul>
+
+<h1>1 month old pictures</h1>
+<p><% @one_month_old_pic.each do |picture| %></p>
+<%= link_to(image_tag(picture.url), "/pictures/#{picture.id}") %>
+<% end %>
+
+<% @years.each do |year| %>
+  <h1><%= year %></h1>
+      <% @pictures.each do|picture| %>
+      <% if picture.created_at.year == year%>
+      <p><%= picture.title %>, <%= picture.artist %> </p>
+      <%= link_to(image_tag(picture.url), "/pictures/#{picture.id}") %>
+      <% end %>
+  <% end %>
+<% end %>
