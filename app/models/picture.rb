@@ -1,4 +1,5 @@
 class Picture < ApplicationRecord
+  belongs_to :user
 
   def self.newest_first
     Picture.order("Created_at Desc")
