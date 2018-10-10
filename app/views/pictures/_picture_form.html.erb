@@ -1,5 +1,5 @@
-<%= link_to("Back to Pictures", "/pictures") %>
 <%= form_for picture do |f| %>
+<div class="picture_form">
   <p>
     <%= f.label :artist %><br>
     <%= f.text_field :artist %>
@@ -15,6 +15,7 @@
   <p>
     <%= f.submit "Save" %>
   </p>
+</div>
 
   <% if @picture.errors.any? %>
   <div id= "error_explanation">
