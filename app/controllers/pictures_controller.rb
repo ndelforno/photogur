@@ -53,6 +53,7 @@ before_action :ensure_user_owns_picture, only: [:edit, :update, :destroy]
     @picture.title = params[:picture][:title]
     @picture.artist = params[:picture][:artist]
     @picture.url = params[:picture][:url]
+    @picture.created_at = params[:picture][:created_at]
 
     if @picture.save
       redirect_to "/pictures/#{@picture.id}"

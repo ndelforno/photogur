@@ -4,7 +4,8 @@
 <div class="pictures">
 <% @pictures.each do |picture| %>
   <p><%= picture.title %>, <%= picture.artist %><br> <br>
-  <%= link_to(image_tag(picture.url), "/pictures/#{picture.id}") %>
+  <%= link_to(image_tag(picture.url), "/pictures/#{picture.id}") %> <br>
+  by <%= picture.user.email %>
 </p>
 <% end %>
 </div>
@@ -18,7 +19,7 @@
 
 <h1>1 month old pictures</h1>
 <div class="pictures">
-<p><% @one_month_old_pic.each do |picture| %></p>
+<% @one_month_old_pic.each do |picture| %>
 <%= link_to(image_tag(picture.url), "/pictures/#{picture.id}") %>
 <% end %>
 </div>
@@ -26,6 +27,7 @@
 
 <% @years.each do |year| %>
   <h1><%= year %></h1>
+  <hr>
 <div class="pictures">
       <% @pictures.each do|picture| %>
       <% if picture.created_at.year == year%>
@@ -34,5 +36,10 @@
       </p>
       <% end %>
   <% end %>
-<% end %>
 </div>
+<% end %>
+
+<br>
+<br>
+<br>
+<br>

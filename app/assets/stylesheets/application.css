@@ -42,6 +42,10 @@ a:hover {
   color: white;
 }
 
+.login {
+  text-align: center;
+}
+
 .userinfo {
   margin: 0;
   text-align: right;
@@ -76,7 +80,7 @@ footer {
   bottom: 0px;
   left: 0px;
   right: 0px;
-  padding: 15px;
+  padding: 5px;
   text-align: center;
   color: white;
   background-color: black;

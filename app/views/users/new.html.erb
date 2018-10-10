@@ -9,8 +9,8 @@
 <% end %>
 
 <%= form_for @user do |f| %>
-
-<div class="field">
+<div class="login">
+  <div class="field">
     <%= f.label :email %>
     <%= f.email_field :email %>
   </div>
@@ -25,8 +25,9 @@
     <%= f.password_field :password_confirmation %>
   </div>
 
-<div>
-<%= f.submit 'Sign Up' %>
+  <div>
+  <%= f.submit 'Sign Up' %>
+  </div>
 </div>
 
 <% end %>

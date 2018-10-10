@@ -1,7 +1,10 @@
 <h1>Sign in</h1>
 <%= form_for :session, url:sessions_path do |f| %>
 
-<div class="field">
+
+<div class="login">
+
+  <div class="field">
     <%= f.label :email %>
     <%= f.email_field :email %>
   </div>
@@ -12,5 +15,6 @@
   </div>
 
   <%= f.submit "Login" %>
+</div>
 
 <% end %>
