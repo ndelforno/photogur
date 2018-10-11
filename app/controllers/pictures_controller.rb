@@ -28,12 +28,12 @@ before_action :ensure_user_owns_picture, only: [:edit, :update, :destroy]
     @picture = Picture.new
   end
 
-  def create
-    @picture = Picture.new
+  def picture_params
+    params.require(:picture).permit(:title, :artist, :url)
+  end
 
-    @picture.title = params[:picture][:title]
-    @picture.artist = params[:picture][:artist]
-    @picture.url = params[:picture][:url]
+  def create
+    @picture = Picture.new(picture_params)
     @picture.user = current_user
 
     if @picture.save
