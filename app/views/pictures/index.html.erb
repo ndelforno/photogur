@@ -8,6 +8,7 @@
     <div class="card-body">
       <h5 class="card-title"><%= picture.title %></h5>
       <p class="card-text"><%= picture.artist %></p>
+      <p class="card-text">Posted by <%= picture.user.email %></p>
       <a href=<%="pictures/#{picture.id}"%> class="btn btn-primary">See picture</a>
     </div>
   </div>
@@ -16,17 +17,25 @@
 
 
 <h1>Most recent pictures</h1>
-<div class="recent_pictures">
-  <% @most_recent_pictures.each do |picture| %>
-  <%= link_to(picture.title, "/pictures/#{picture.id}") %>
-  <% end %>
-</div>
+  <div class="recent_pictures">
+    <% @most_recent_pictures.each do |picture| %>
+    <%= link_to(picture.title, "/pictures/#{picture.id}") %>
+    <% end %>
+  </div>
 
 <h1>1 month old pictures</h1>
-<div class="pictures">
-<% @one_month_old_pic.each do |picture| %>
-<%= link_to(image_tag(picture.url), "/pictures/#{picture.id}") %>
-<% end %>
+  <div class="pictures">
+  <% @one_month_old_pic.each do |picture| %>
+  <div class="card" style="width: 18rem;">
+    <img src=<%="#{picture.url}"%> alt="">
+    <div class="card-body">
+      <h5 class="card-title"><%= picture.title %></h5>
+      <p class="card-text"><%= picture.artist %></p>
+      <p class="card-text">Posted by <%= picture.user.email %></p>
+      <a href=<%="pictures/#{picture.id}"%> class="btn btn-primary">See picture</a>
+    </div>
+  </div>
+  <% end %>
 </div>
 
 
@@ -36,9 +45,15 @@
 <div class="pictures">
       <% @pictures.each do|picture| %>
       <% if picture.created_at.year == year%>
-      <p><%= picture.title %>, <%= picture.artist %> <br> <br>
-      <%= link_to(image_tag(picture.url), "/pictures/#{picture.id}") %>
-      </p>
+      <div class="card" style="width: 18rem;">
+        <img src=<%="#{picture.url}"%> alt="">
+        <div class="card-body">
+          <h5 class="card-title"><%= picture.title %></h5>
+          <p class="card-text"><%= picture.artist %></p>
+          <p class="card-text">Posted by <%= picture.user.email %></p>
+          <a href=<%="pictures/#{picture.id}"%> class="btn btn-primary">See picture</a>
+        </div>
+      </div>
       <% end %>
   <% end %>
 </div>
