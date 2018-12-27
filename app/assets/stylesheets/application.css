@@ -51,8 +51,15 @@ a:hover {
   text-align: right;
 }
 
-.recent_pictures {
-  color: black;
+.carousel-item{
+  text-align: center;
+}
+
+.carousel-inner{
+  height: 600px;
+  width: 300px;
+  margin-left: 50%;
+  margin-right: 50%;
   text-align: center;
 }
 
@@ -85,3 +92,5 @@ footer {
   color: white;
   background-color: black;
 }
+
+.
